@@ -1,0 +1,14 @@
+sss:
+  build: ./sss
+  container_name: sss
+  env_file:
+   - common.env
+   - sss.env
+  log_driver: "json-file"
+  volumes_from:
+   - mysql.data
+   - tomcat
+  external_links:
+   - mysql
+  ports:
+   - "8391:8390"
