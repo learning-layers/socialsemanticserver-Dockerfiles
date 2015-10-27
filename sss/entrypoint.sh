@@ -21,6 +21,7 @@ echo "setting SSS config ..."
 cd /sss.package/sss.app/
 sed -i "s#SSS_HOST#${SSS_HOST}#g" ./sss.conf.yaml
 sed -i "s#SSS_PORT#${SSS_PORT}#g" ./sss.conf.yaml
+sed -i "s#SSS_LOCAL_WORK_PATH#${SSS_LOCAL_WORK_PATH}#g" ./sss.conf.yaml
 sed -i "s#SSS_MYSQL_HOST#${SSS_MYSQL_HOST}#g" ./sss.conf.yaml
 sed -i "s#SSS_MYSQL_PORT#${SSS_MYSQL_PORT}#g" ./sss.conf.yaml
 sed -i "s#SSS_MYSQL_USERNAME#${SSS_MYSQL_USERNAME}#g" ./sss.conf.yaml

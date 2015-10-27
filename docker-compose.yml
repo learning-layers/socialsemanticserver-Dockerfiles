@@ -1,3 +1,7 @@
+sss.data:
+  build: ./sss.data
+  container_name: sss.data
+  log_driver: "json-file"
 sss:
   build: ./sss
   container_name: sss
@@ -7,6 +11,7 @@ sss:
   log_driver: "json-file"
   volumes_from:
    - mysql.data
+   - sss.data
    - tomcat
   external_links:
    - mysql
