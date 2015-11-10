@@ -1,3 +1,9 @@
+sss.tomcat:
+  build: ./sss.tomcat
+  container_name: sss.tomcat
+  log_driver: "json-file"
+  ports:
+   - "8081:8080"
 sss.data:
   build: ./sss.data
   container_name: sss.data
