@@ -19,7 +19,7 @@ echo "done --> deploying SSS REST API to Tomcat with config"
 
 echo "setting SSS config ..."
 cd /sss.package/sss.app/
-sed -i "s#SSS_HOST#${SSS_HOST}#g" ./sss.conf.yaml
+sed -i "s#SSS_HOST#localhost#g" ./sss.conf.yaml
 sed -i "s#SSS_PORT#${SSS_PORT}#g" ./sss.conf.yaml
 sed -i "s#SSS_LOCAL_WORK_PATH#${SSS_LOCAL_WORK_PATH}#g" ./sss.conf.yaml
 sed -i "s#SSS_MYSQL_HOST#${SSS_MYSQL_HOST}#g" ./sss.conf.yaml
