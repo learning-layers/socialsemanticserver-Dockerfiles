@@ -3,7 +3,7 @@
 echo "importing SSS MySQL db ..."
 cd /sss.package/sss.app/
 sed -i "s#SSS_MYSQL_SCHEME#${SSS_MYSQL_SCHEME}#g" ./sss.schema.sql
-mysql -u$SSS_MYSQL_USERNAME -p$SSS_MYSQL_PASSWORD -hmysql < ./sss.schema.sql
+mysql -u$SSS_DB_USER -p$SSS_DB_PASS -hmysql < ./sss.schema.sql
 echo "done -> importing SSS MySQL db"
 
 echo "setting Tomcat SSS config ..."
@@ -24,8 +24,8 @@ sed -i "s#SSS_PORT#${SSS_PORT}#g" ./sss.conf.yaml
 sed -i "s#SSS_LOCAL_WORK_PATH#${SSS_LOCAL_WORK_PATH}#g" ./sss.conf.yaml
 sed -i "s#SSS_MYSQL_HOST#${SSS_MYSQL_HOST}#g" ./sss.conf.yaml
 sed -i "s#SSS_MYSQL_PORT#${SSS_MYSQL_PORT}#g" ./sss.conf.yaml
-sed -i "s#SSS_MYSQL_USERNAME#${SSS_MYSQL_USERNAME}#g" ./sss.conf.yaml
-sed -i "s#SSS_MYSQL_PASSWORD#${SSS_MYSQL_PASSWORD}#g" ./sss.conf.yaml
+sed -i "s#SSS_MYSQL_USERNAME#${SSS_DB_USER}#g" ./sss.conf.yaml
+sed -i "s#SSS_MYSQL_PASSWORD#${SSS_DB_PASS}#g" ./sss.conf.yaml
 sed -i "s#SSS_MYSQL_SCHEME#${SSS_MYSQL_SCHEME}#g" ./sss.conf.yaml
 sed -i "s#SSS_AUTH_TYPE#${SSS_AUTH_TYPE}#g" ./sss.conf.yaml
 sed -i "s#SSS_REST_API_PATH#${SSS_REST_API_PATH}#g" ./sss.conf.yaml
@@ -33,8 +33,8 @@ sed -i "s#SSS_TETHYS_USER#${SSS_TETHYS_USER}#g" ./sss.conf.yaml
 sed -i "s#SSS_TETHYS_PASSWORD#${SSS_TETHYS_PASSWORD}#g" ./sss.conf.yaml
 sed -i "s#SSS_TETHYS_LAS_USER#${SSS_TETHYS_LAS_USER}#g" ./sss.conf.yaml
 sed -i "s#SSS_TETHYS_LAS_PASSWORD#${SSS_TETHYS_LAS_PASSWORD}#g" ./sss.conf.yaml
-sed -i "s#SSS_TETHYS_OIDC_CONF_URI#${SSS_TETHYS_OIDC_CONF_URI}#g" ./sss.conf.yaml
-sed -i "s#SSS_TETHYS_OIDC_USER_END_POINT_URI#${SSS_TETHYS_OIDC_USER_END_POINT_URI}#g" ./sss.conf.yaml
+sed -i "s#SSS_TETHYS_OIDC_CONF_URI#${SSS_OIDC_CONFIG}#g" ./sss.conf.yaml
+sed -i "s#SSS_TETHYS_OIDC_USER_END_POINT_URI#${SSS_OIDC_ENDPOINT}#g" ./sss.conf.yaml
 echo "done --> setting SSS config ..."
 
 echo "starting SSS ..."
