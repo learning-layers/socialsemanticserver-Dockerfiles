@@ -12,7 +12,6 @@ sss:
   build: ./sss
   container_name: sss
   env_file:
-   - common.env
    - sss.env
   log_driver: "json-file"
   volumes_from:
