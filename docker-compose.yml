@@ -1,15 +1,15 @@
 sss.tomcat:
-  build: ./sss.tomcat
+  image: learninglayers/sss.tomcat:0.0.1
   container_name: sss.tomcat
   log_driver: "json-file"
   ports:
    - "8081:8080"
 sss.data:
-  build: ./sss.data
+  image: learninglayers/sss.data:0.0.1
   container_name: sss.data
   log_driver: "json-file"
 sss:
-  build: ./sss
+  image: learninglayers/sss:0.0.1
   container_name: sss
   env_file:
    - sss.env
