@@ -18,7 +18,7 @@ sss:
    - mysql.data
    - sss.data
    - sss.tomcat
-  external_links:
+  links:
    - mysql
   ports:
    - "8391:8390"

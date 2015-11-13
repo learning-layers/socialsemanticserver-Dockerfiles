@@ -17,6 +17,9 @@ cp ./sss.adapter.rest.v2.conf.yaml /usr/local/tomcat/conf/
 cp ./sss.adapter.rest.v2.war /usr/local/tomcat/webapps/
 echo "done --> deploying SSS REST API to Tomcat with config"
 
+echo "sss api conf printout ...."
+cat /usr/local/tomcat/conf/sss.adapter.rest.v2.conf.yaml
+
 echo "setting SSS config ..."
 cd /sss.package/sss.app/
 sed -i "s#SSS_HOST#localhost#g" ./sss.conf.yaml
@@ -36,6 +39,9 @@ sed -i "s#SSS_TETHYS_LAS_PASSWORD#${SSS_TETHYS_LAS_PASSWORD}#g" ./sss.conf.yaml
 sed -i "s#SSS_TETHYS_OIDC_CONF_URI#${SSS_OIDC_CONFIG}#g" ./sss.conf.yaml
 sed -i "s#SSS_TETHYS_OIDC_USER_END_POINT_URI#${SSS_OIDC_ENDPOINT}#g" ./sss.conf.yaml
 echo "done --> setting SSS config ..."
+
+echo "sss conf printout ...."
+cat ./sss.conf.yaml
 
 echo "starting SSS ..."
 java -jar -Dlog4j.configuration=file:log4j.properties sss.jar
