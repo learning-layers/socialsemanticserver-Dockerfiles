@@ -12,7 +12,7 @@ sss:
   image: learninglayers/sss:0.0.1
   container_name: sss
   env_file:
-   - sss.env
+   - services/socialsemanticserver/sss.env
   log_driver: "json-file"
   volumes_from:
    - mysql.data
@@ -22,3 +22,6 @@ sss:
    - mysql
   ports:
    - "8391:8390"
+  actions:
+   - create_databases: sss.env
+   
