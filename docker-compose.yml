@@ -23,5 +23,5 @@ sss:
   ports:
    - "8391:8390"
   actions:
-   - create_databases: sss.env
+   - create_databases: [sss.env]
    
