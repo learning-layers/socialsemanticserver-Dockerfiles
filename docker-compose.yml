@@ -15,7 +15,6 @@ sss:
    - services/socialsemanticserver/sss.env
   log_driver: "json-file"
   volumes_from:
-   - mysql.data
    - sss.data
    - sss.tomcat
   links:
