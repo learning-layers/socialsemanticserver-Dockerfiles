@@ -2,7 +2,7 @@
 
 echo "importing SSS MySQL db ..."
 cd /sss.package/sss.app/
-sed -i "s#SSS_MYSQL_SCHEME#${SSS_MYSQL_SCHEME}#g" ./sss.schema.sql
+sed -i "s#SSS_MYSQL_SCHEME#${SSS_DB_NAME}#g" ./sss.schema.sql
 mysql -u$SSS_DB_USER -p$SSS_DB_PASS -hmysql < ./sss.schema.sql
 echo "done -> importing SSS MySQL db"
 
@@ -29,7 +29,7 @@ sed -i "s#SSS_MYSQL_HOST#${SSS_MYSQL_HOST}#g" ./sss.conf.yaml
 sed -i "s#SSS_MYSQL_PORT#${SSS_MYSQL_PORT}#g" ./sss.conf.yaml
 sed -i "s#SSS_MYSQL_USERNAME#${SSS_DB_USER}#g" ./sss.conf.yaml
 sed -i "s#SSS_MYSQL_PASSWORD#${SSS_DB_PASS}#g" ./sss.conf.yaml
-sed -i "s#SSS_MYSQL_SCHEME#${SSS_MYSQL_SCHEME}#g" ./sss.conf.yaml
+sed -i "s#SSS_MYSQL_SCHEME#${SSS_DB_NAME}#g" ./sss.conf.yaml
 sed -i "s#SSS_SORL_PATH#${SSS_SORL_PATH}#g" ./sss.conf.yaml
 sed -i "s#SSS_AUTH_TYPE#${SSS_AUTH_TYPE}#g" ./sss.conf.yaml
 sed -i "s#SSS_REST_API_PATH#${SSS_REST_API_PATH}#g" ./sss.conf.yaml
