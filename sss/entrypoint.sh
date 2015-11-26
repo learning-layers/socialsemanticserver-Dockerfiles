@@ -38,8 +38,6 @@ sed -i "s#SSS_TETHYS_PASSWORD#${SSS_TETHYS_PASSWORD}#g" ./sss.conf.yaml
 sed -i "s#SSS_TETHYS_LAS_USER#${SSS_TETHYS_LAS_USER}#g" ./sss.conf.yaml
 sed -i "s#SSS_TETHYS_LAS_PASSWORD#${SSS_TETHYS_LAS_PASSWORD}#g" ./sss.conf.yaml
 sed -i "s#LAYERS_API_URI#${LAYERS_API_URI}#g" ./sss.conf.yaml
-sed -i "s#SSS_TETHYS_OIDC_CONF_URI#${SSS_OIDC_CONFIG}#g" ./sss.conf.yaml
-sed -i "s#SSS_TETHYS_OIDC_USER_END_POINT_URI#${SSS_OIDC_ENDPOINT}#g" ./sss.conf.yaml
 sed -i "s#SSS_EVERNOTE_TEST_AUTH_TOKEN#${SSS_EVERNOTE_TEST_AUTH_TOKEN}#g" ./sss.conf.yaml
 sed -i "s#SSS_EVERNOTE_TEST_EMAIL#${SSS_EVERNOTE_TEST_EMAIL}#g" ./sss.conf.yaml
 echo "done --> setting SSS config ..."
