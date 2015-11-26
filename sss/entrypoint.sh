@@ -1,10 +1,10 @@
 #!/bin/bash
 
-echo "importing SSS MySQL db ..."
-cd /sss.package/sss.app/
-sed -i "s#SSS_MYSQL_SCHEME#${SSS_DB_NAME}#g" ./sss.schema.sql
-mysql -u$SSS_DB_USER -p$SSS_DB_PASS -hmysql < ./sss.schema.sql
-echo "done -> importing SSS MySQL db"
+#echo "importing SSS MySQL db ..."
+#cd /sss.package/sss.app/
+#sed -i "s#SSS_MYSQL_SCHEME#${SSS_DB_NAME}#g" ./sss.schema.sql
+#mysql -u$SSS_DB_USER -p$SSS_DB_PASS -hmysql < ./sss.schema.sql
+#echo "done -> importing SSS MySQL db"
 
 echo "setting Tomcat SSS config ..."
 cd /sss.package/
