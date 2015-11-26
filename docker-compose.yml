@@ -9,7 +9,7 @@ sss.data:
   container_name: sss.data
   log_driver: "json-file"
 sss:
-  image: learninglayers/sss:0.0.2
+  image: learninglayers/sss:0.0.3
   container_name: sss
   env_file:
    - services/socialsemanticserver/sss.env
@@ -23,4 +23,3 @@ sss:
    - "8391:8390"
   actions:
    - create_databases: [sss.env]
-   
