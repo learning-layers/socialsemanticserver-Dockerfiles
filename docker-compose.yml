@@ -1,23 +1,18 @@
-sss.tomcat:
-  image: learninglayers/sss.tomcat:0.0.1
-  container_name: sss.tomcat
-  log_driver: "json-file"
 sss.data:
   image: learninglayers/sss.data:0.0.1
   container_name: sss.data
   log_driver: "json-file"
 sss:
-  image: learninglayers/sss:0.0.6
+  image: learninglayers/sss:0.0.7
   container_name: sss
   env_file:
    - services/socialsemanticserver/sss.env
   log_driver: "json-file"
   volumes_from:
    - sss.data
-   - sss.tomcat
   links:
    - mysql
   ports:
-   - "8391:8390"
+   - "8080:8080"
   actions:
    - create_databases: [sss.env]

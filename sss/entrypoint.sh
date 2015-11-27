@@ -1,15 +1,9 @@
 #!/bin/bash
 
-#echo "importing SSS MySQL db ..."
-#cd /sss.package/sss.app/
-#sed -i "s#SSS_MYSQL_SCHEME#${SSS_DB_NAME}#g" ./sss.schema.sql
-#mysql -u$SSS_DB_USER -p$SSS_DB_PASS -hmysql < ./sss.schema.sql
-#echo "done -> importing SSS MySQL db"
-
 echo "setting Tomcat SSS config ..."
 cd /sss.package/
-sed -i "s#SSS_HOST#192.168.108.125#g" ./sss.adapter.rest.v2.conf.yaml
-sed -i "s#SSS_PORT_FOR_TOMCAT#8391#g" ./sss.adapter.rest.v2.conf.yaml
+sed -i "s#SSS_HOST#localhost#g" ./sss.adapter.rest.v2.conf.yaml
+sed -i "s#SSS_PORT_FOR_TOMCAT#8390#g" ./sss.adapter.rest.v2.conf.yaml
 echo "done --> setting Tomcat SSS config"
 
 echo "deploying SSS REST API to Tomcat with config ..."
@@ -22,7 +16,7 @@ cat /usr/local/tomcat/conf/sss.adapter.rest.v2.conf.yaml
 
 echo "setting SSS config ..."
 cd /sss.package/sss.app/
-sed -i "s#SSS_HOST#192.168.108.125#g" ./sss.conf.yaml
+sed -i "s#SSS_HOST#localhost#g" ./sss.conf.yaml
 sed -i "s#SSS_PORT#8390#g" ./sss.conf.yaml
 sed -i "s#SSS_LOCAL_WORK_PATH#${SSS_LOCAL_WORK_PATH}#g" ./sss.conf.yaml
 sed -i "s#SSS_MYSQL_HOST#${SSS_MYSQL_HOST}#g" ./sss.conf.yaml
@@ -45,6 +39,10 @@ echo "done --> setting SSS config ..."
 echo "sss conf printout ...."
 cat ./sss.conf.yaml
 
+echo "starting tomcat ..."
+/usr/local/tomcat/bin/catalina.sh start
+
 echo "starting SSS ..."
 java -jar -Dlog4j.configuration=file:log4j.properties sss.jar
+
 exec "$@"
