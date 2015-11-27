@@ -6,7 +6,8 @@ sss:
   image: learninglayers/sss:0.0.7
   container_name: sss
   env_file:
-   - services/socialsemanticserver/sss.env
+   - common.env
+   - sss.env
   log_driver: "json-file"
   volumes_from:
    - sss.data
