@@ -8,7 +8,7 @@
 
 echo "setting Tomcat SSS config ..."
 cd /sss.package/
-sed -i "s#SSS_HOST#${SSS_HOST}#g" ./sss.adapter.rest.v2.conf.yaml
+sed -i "s#SSS_HOST#sss#g" ./sss.adapter.rest.v2.conf.yaml
 sed -i "s#SSS_PORT_FOR_TOMCAT#${SSS_PORT_FOR_TOMCAT}#g" ./sss.adapter.rest.v2.conf.yaml
 echo "done --> setting Tomcat SSS config"
 
@@ -22,7 +22,7 @@ cat /usr/local/tomcat/conf/sss.adapter.rest.v2.conf.yaml
 
 echo "setting SSS config ..."
 cd /sss.package/sss.app/
-sed -i "s#SSS_HOST#localhost#g" ./sss.conf.yaml
+sed -i "s#SSS_HOST#sss#g" ./sss.conf.yaml
 sed -i "s#SSS_PORT#${SSS_PORT}#g" ./sss.conf.yaml
 sed -i "s#SSS_LOCAL_WORK_PATH#${SSS_LOCAL_WORK_PATH}#g" ./sss.conf.yaml
 sed -i "s#SSS_MYSQL_HOST#${SSS_MYSQL_HOST}#g" ./sss.conf.yaml
