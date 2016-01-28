@@ -3,7 +3,7 @@ sss.data:
   container_name: sss.data
   log_driver: "json-file"
 sss:
-  image: learninglayers/sss:0.0.7
+  image: learninglayers/sss:0.0.8
   container_name: sss
   env_file:
    - common.env
