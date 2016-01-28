@@ -6,7 +6,7 @@ echo "done --> create sss work dir"
 
 echo "setting sss config ..."
 cd /sss.package/
-sed -i "s#SSS_LOCAL_WORK_PATH#/sssWorkDir/#g" sss.conf.yaml
+sed -i "s#SSS_LOCAL_WORK_PATH#${SSS_LOCAL_WORK_PATH}#g" sss.conf.yaml
 sed -i "s#SSS_MYSQL_HOST#${SSS_MYSQL_HOST}#g" sss.conf.yaml
 sed -i "s#SSS_MYSQL_PORT#${SSS_MYSQL_PORT}#g" sss.conf.yaml
 sed -i "s#SSS_MYSQL_USERNAME#${SSS_DB_USER}#g" sss.conf.yaml
