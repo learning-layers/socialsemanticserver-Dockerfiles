@@ -3,7 +3,7 @@ sss.data:
   container_name: sss.data
   log_driver: "json-file"
 sss:
-  image: learninglayers/sss:0.0.8
+  image: learninglayers/sss:0.0.9
   container_name: sss
   env_file:
    - common.env
@@ -14,6 +14,6 @@ sss:
   links:
    - mysql
   ports:
-   - "8080:8080"
+   - "9000:9000"
   actions:
    - create_databases: [sss.env]
